@@ -25,7 +25,24 @@ public class Card {
         this.suit = suit;
     }
 
+    @Override
     public String toString() {
         return suit.toString() + " : " + value.toString();
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this) {
+            return true;
+        }
+
+        if (!(o instanceof Card)) {
+            return false;
+        }
+
+        Card c = (Card) o;
+
+        return (c.getValue().equals(this.getValue()) && c.getSuit().equals(this.getSuit()));
+    }
 }
+
