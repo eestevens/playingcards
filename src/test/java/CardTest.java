@@ -18,4 +18,12 @@ public class CardTest {
         Card newCard = new Card(Suit.DIAMOND, Value.KING);
         Assert.assertTrue("Card value is correct : King", newCard.getValue().equals(Value.KING));
     }
+
+    @Test
+    public void testToString() {
+        Card card = new Card(Suit.HEART, Value.JACK);
+        String expectedOutput = "HEART : JACK";
+        System.out.println(card.toString());
+        Assert.assertTrue("Output is correct", expectedOutput.equals(card.toString()));
+    }
 }

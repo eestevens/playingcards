@@ -1,19 +1,21 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Deck {
 
-    private Card[] cardDeck;
+    private List<Card> cardDeck;
 
     public Deck() {
+        cardDeck = new ArrayList<>(52);
         int i = 0;
-        int deckSize = Suit.values().length * Value.values().length;
-        cardDeck = new Card[deckSize];
         for (Suit suit : Suit.values()) {
             for(Value value : Value.values()) {
-                cardDeck[i++] = new Card(suit, value);
+                cardDeck.add(new Card(suit, value));
             }
         }
     }
 
-    public Card[] returnDeck() {
+    public List<Card> returnDeck() {
         return cardDeck;
     }
 

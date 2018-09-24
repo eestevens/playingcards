@@ -2,6 +2,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.List;
+
 public class DeckTest {
     private Deck testDeck;
 
@@ -14,17 +16,17 @@ public class DeckTest {
     @Test
     public void testDeckSize() {
         int expectedDeckSize = 52;
-        Assert.assertEquals(expectedDeckSize, testDeck.returnDeck().length);
+        Assert.assertEquals(expectedDeckSize, testDeck.returnDeck().size());
     }
 
     @Test
     public void testValues() {
         int expectedValueCount = 4;
-        Card[] cards = testDeck.returnDeck();
+        List<Card> cards = testDeck.returnDeck();
         for(Value val : Value.values()) {
             int count = 0;
-            for(int i = 0; i < cards.length ; i ++) {
-                if(cards[i].getValue().equals(val)) {
+            for(Card card : cards) {
+                if(card.getValue().equals(val)) {
                     count++;
                 }
             }
@@ -36,11 +38,11 @@ public class DeckTest {
     @Test
     public void testSuits() {
         int expectedSuitCount = 13;
-        Card[] cards = testDeck.returnDeck();
+        List<Card> cards = testDeck.returnDeck();
         for(Suit suit : Suit.values()) {
             int count = 0;
-            for(int i = 0; i < cards.length ; i ++) {
-                if(cards[i].getSuit().equals(suit)) {
+            for(Card card : cards) {
+                if(card.getSuit().equals(suit)) {
                     count++;
                 }
             }
@@ -50,10 +52,10 @@ public class DeckTest {
 
     @Test
     public void testUniqueCards() {
-        Card[] cards = testDeck.returnDeck();
-        for(int i = 0 ; i < cards.length-1; i ++) {
-            for(int j = i + 1; j < cards.length; j++) {
-                Assert.assertTrue("Each card is unique", !cards[i].equals(cards[j]));
+        List<Card> cards = testDeck.returnDeck();
+        for(int i = 0 ; i < cards.size()-1; i ++) {
+            for(int j = i + 1; j < cards.size(); j++) {
+                Assert.assertTrue("Each card is unique", !cards.get(i).equals(cards.get(j)));
             }
         }
     }
