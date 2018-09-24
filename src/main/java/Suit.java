@@ -1,5 +1,5 @@
-/**
- * Created by erikstevens on 9/23/18.
- */
-public enum Suit {
+enum Suit {
+    CLUB, DIAMOND, HEART, SPADE
 }
+
+

@@ -1,5 +1,11 @@
-/**
- * Created by erikstevens on 9/23/18.
- */
 public class Deck {
+
+    private Card[] cardDeck;
+    public Deck() {
+
+    }
+
+    public void shuffle() {
+
+    }
 }
