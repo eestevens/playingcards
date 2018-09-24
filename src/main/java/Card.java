@@ -27,7 +27,7 @@ public class Card {
 
     @Override
     public String toString() {
-        return suit.toString() + " : " + value.toString();
+        return value.toString() + " : " + suit.toString();
     }
 
     @Override

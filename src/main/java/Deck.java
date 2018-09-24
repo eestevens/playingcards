@@ -2,11 +2,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Deck {
-
+    private static final int STANDARD_DECK = 52;
     private List<Card> cardDeck;
 
     public Deck() {
-        cardDeck = new ArrayList<>(52);
+        cardDeck = new ArrayList<>(STANDARD_DECK);
         int i = 0;
         for (Suit suit : Suit.values()) {
             for(Value value : Value.values()) {
@@ -21,5 +21,9 @@ public class Deck {
 
     public void shuffle() {
 
+    }
+
+    public Card dealCard() {
+        return cardDeck.remove(0);
     }
 }

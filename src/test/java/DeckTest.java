@@ -59,4 +59,15 @@ public class DeckTest {
             }
         }
     }
+
+    @Test
+    public void testDealCard() {
+        List<Card> cards = testDeck.returnDeck();
+        for(int expectedDeckSize = cards.size(); expectedDeckSize > 0; expectedDeckSize -- ) {
+            Assert.assertTrue("Deck is expected size", expectedDeckSize == cards.size());
+            Card dealtCard = testDeck.dealCard();
+            cards = testDeck.returnDeck();
+            Assert.assertTrue("Card is not in remaining deck", !cards.contains(dealtCard));
+        }
+    }
 }

@@ -22,7 +22,7 @@ public class CardTest {
     @Test
     public void testToString() {
         Card card = new Card(Suit.HEART, Value.JACK);
-        String expectedOutput = "HEART : JACK";
+        String expectedOutput = "JACK : HEART";
         System.out.println(card.toString());
         Assert.assertTrue("Output is correct", expectedOutput.equals(card.toString()));
     }
