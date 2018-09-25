@@ -70,4 +70,10 @@ public class DeckTest {
             Assert.assertTrue("Card is not in remaining deck", !cards.contains(dealtCard));
         }
     }
+
+    @Test
+    public void testShuffle() {
+        testDeck.shuffle();
+        
+    }
 }
